@@ -14,7 +14,7 @@ export default Login;
 const LoginContainer = styled.div`
   display: flex;
 `;
-interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ButtonProps {
   primary?: boolean;
 }
 
@@ -25,6 +25,13 @@ const Button = styled.div<ButtonProps>`
       background-color: #000000;
       color: #fff;
     `};
-  padding: 0.3rem 1rem;
+  padding: 0.25rem 1rem;
   font-weight: bold;
+  border-radius: 0.125rem;
+  font-size: 1rem;
+  line-height: 1.125;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  outline: 0px;
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Logo = () => {
   return (
     <LogoContainer>
-      <h1>depop</h1>
+      <h2>depop</h2>
     </LogoContainer>
   );
 };
@@ -11,7 +11,8 @@ const Logo = () => {
 export default Logo;
 
 const LogoContainer = styled.div`
-  h1 {
+  h2 {
     color: rgb(255, 35, 0);
+    font-weight: bold;
   }
 `;
