@@ -1,6 +1,6 @@
 import { ChangeEventHandler, useState } from "react";
 import styled from "styled-components";
-import Search from "../../assets/search.svg";
+import Search from "../assets/search.svg";
 
 const demoWords: string[] = [
   "vintage",

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Login from "./Login";
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
-import Navigation from "./Navigation";
+import Login from "../../components/Login";
+import Logo from "../../components/Logo";
+import SearchBar from "../../components/SearchBar";
+import Navigation from "../../components/Navigation";
 const Header = () => {
   return (
     <HeaderContainer>
