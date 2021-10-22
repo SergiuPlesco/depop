@@ -21,7 +21,7 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-  padding: 0 1rem 1rem;
+  padding: 0 1rem;
 
   .header-top {
     display: flex;
