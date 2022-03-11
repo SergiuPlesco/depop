@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import Hero480 from "../assets/mobile-hero-480@2x.jpg";
 import MobileHero2x from "../assets/mobile-hero@2x.jpg";
@@ -18,24 +17,22 @@ const Banner = () => {
       </BannerPicture>
       <BannerText>
         <div>
+          <h1>
+            BUY. SELL.
+            <br />
+            DISCOVER UNIQUE FASHION.
+          </h1>
+          <p>
+            Designer. Preloved. Vintage. Streetwear. Sneakers. Whatever your
+            style. Find it on Depop.
+          </p>
           <div>
-            <h1>
-              BUY. SELL.
-              <br />
-              DISCOVER UNIQUE FASHION.
-            </h1>
-            <p>
-              Designer. Preloved. Vintage. Streetwear. Sneakers. Whatever your
-              style. Find it on Depop.
-            </p>
-            <div>
-              <a href="#">
-                <img className="apple-img" src={AppleAppStore} alt="" />
-              </a>
-              <a href="#">
-                <img className="google-img" src={GooglePlayStore} alt="" />
-              </a>
-            </div>
+            <a href="https://www.apple.com/">
+              <img className="apple-img" src={AppleAppStore} alt="" />
+            </a>
+            <a href="https://www.google.com/">
+              <img className="google-img" src={GooglePlayStore} alt="" />
+            </a>
           </div>
         </div>
       </BannerText>
@@ -59,7 +56,9 @@ const BannerPicture = styled.picture`
     width: 100%;
     height: 100%;
     max-width: 100%;
-    position: absolute;
+    @media (min-width: 769px) {
+      position: absolute;
+    }
   }
 `;
 
@@ -71,7 +70,10 @@ const BannerText = styled.div`
   height: 100%;
   --webkit-box-pack: center;
   justify-content: center;
-  padding: 8rem 0rem;
+  padding: 2rem 0rem;
+  @media (min-width: 1024px) {
+    padding: 8rem 0rem;
+  }
 
   div {
     width: 100%;
@@ -79,41 +81,38 @@ const BannerText = styled.div`
     margin: 0px auto;
     padding: 0 1rem;
 
+    h1 {
+      margin: 0;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+      line-height: 1.5;
+      color: rgb(38, 38, 38);
+    }
+    p {
+      margin: 0;
+      margin-bottom: 1.5rem;
+      max-width: 31.5rem;
+      font-weight: normal;
+      font-size: 0.875rem;
+      color: rgb(38, 38, 38);
+    }
     div {
-      h1 {
+      display: flex;
+      padding: 0;
+      a {
+        display: block;
         margin: 0;
-        margin-bottom: 1.25rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 2rem;
-        line-height: 1.5;
-        color: rgb(38, 38, 38);
-      }
-      p {
-        margin: 0;
-        margin-bottom: 1.5rem;
-        max-width: 31.5rem;
-        font-weight: normal;
-        font-size: 0.875rem;
-
-        color: rgb(38, 38, 38);
-      }
-      div {
-        display: flex;
-        padding: 0;
-        a {
+        width: 120px;
+        margin-right: 1.25rem;
+        img {
           display: block;
-          margin: 0;
-          width: 120px;
-          margin-right: 1.25rem;
-          img {
-            display: block;
-            width: 100%;
-            object-fit: cover;
-          }
-          .google-img {
-            height: 40px;
-          }
+          width: 100%;
+          object-fit: cover;
+        }
+        .google-img {
+          height: 40px;
         }
       }
     }

@@ -1,0 +1,26 @@
+<!-- ToDo: This should be moved to cloudfront when available  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 92.8 92.1" style="enable-background:new 0 0 92.8 92.1;" xml:space="preserve">
+	<style type="text/css">
+		.st0{display:none;}
+		.st1{display:inline;}
+		.st2{fill:none;stroke:#CE3A2B;stroke-width:0.985;stroke-linecap:round;stroke-linejoin:round;}
+		.st3{fill:#FF2300;}
+		.st4{display:inline;fill:#FF2300;}
+	</style>
+	<g id="white_box" class="st0">
+		<g class="st1">
+			<path class="st2" d="M510.8,145.6L510.8,145.6"/>
+		</g>
+	</g>
+	<g id="logo">
+		<path class="st3" d="M33.1,58.3c0,7,4.3,10.6,12.4,10.6h14.4V47.5H45.6C37.4,47.5,33.1,51.1,33.1,58.3 M4.5,59.2
+			c0-18.2,13-29.5,33.9-29.5h21.5V3h27v84H38.3C17.6,87,4.5,76.2,4.5,59.2"/>
+	</g>
+	<g id="Layer_4" class="st0">
+		<path class="st1" d="M90.5,46c0,24.5-19.9,44.4-44.4,44.4S1.6,70.5,1.6,46S21.5,1.6,46.1,1.6S90.5,21.4,90.5,46"/>
+		<path class="st4" d="M36,52.1c0,3.7,2.3,5.7,6.6,5.7h7.7V46.3h-7.7C38.3,46.3,36,48.3,36,52.1 M20.7,52.6c0-9.7,7-15.8,18.1-15.8
+			h11.5V22.5h14.4v44.9h-26C27.7,67.4,20.7,61.7,20.7,52.6"/>
+	</g>
+	<g id="text"></g>
+</svg>

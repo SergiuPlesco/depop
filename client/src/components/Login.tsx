@@ -12,7 +12,10 @@ const Login = () => {
 export default Login;
 
 const LoginContainer = styled.div`
-  display: flex;
+  display: none;
+  @media (min-width: 1024px) {
+    display: flex;
+  }
 `;
 interface ButtonProps {
   primary?: boolean;

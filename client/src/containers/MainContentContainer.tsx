@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const MainContent = () => {
-  return <MainContentContainer></MainContentContainer>;
+  return (
+    <MainContentContainer>
+      <h2>Main content container</h2>
+    </MainContentContainer>
+  );
 };
 
 export default MainContent;
