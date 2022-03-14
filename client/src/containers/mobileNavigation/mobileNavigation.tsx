@@ -1,10 +1,11 @@
 import React from "react";
+import Navigation from "../../components/Navigation";
 import styled from "styled-components";
 
 const MobileNavigation = () => {
   return (
     <MobileNavigationContainer>
-      <div>mobileNavigation</div>
+      <div>mobileNavigation goes here</div>
     </MobileNavigationContainer>
   );
 };
