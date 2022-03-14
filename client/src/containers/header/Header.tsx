@@ -1,14 +1,21 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Login from "../../components/Login";
 import Logo from "../../components/Logo";
 import SearchBar from "../../components/SearchBar";
 import Navigation from "../../components/Navigation";
 import HumburgerButton from "../../components/HumburgerButton";
+import MobileNavigation from "../mobileNavigation/MobileNavigation";
+
 const Header = () => {
+  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const handleMobileMenu = () => {
+    setMobileMenuVisible(true);
+  };
   return (
     <HeaderContainer>
       <div className="header-top">
-        <HumburgerButton />
+        <HumburgerButton handleMobileMenu={handleMobileMenu} />
         <Logo />
         <SearchBar />
         <Login />
@@ -16,6 +23,11 @@ const Header = () => {
       <div className="header-bottom">
         <Navigation />
       </div>
+      {isMobileMenuVisible && (
+        <div className="mobile-navigation">
+          <MobileNavigation />
+        </div>
+      )}
     </HeaderContainer>
   );
 };
@@ -23,6 +35,7 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+  position: relative;
   padding: 0 1rem;
 
   .header-top {
