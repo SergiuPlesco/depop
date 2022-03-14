@@ -1,9 +1,10 @@
 import React from "react";
-
-const HumburgerButton = () => {
-  const handleMobileMenu = () => {
-    console.log("mobile menu open");
-  };
+type HamburgerButtonProps = {
+  handleMobileMenu: () => void;
+};
+const HumburgerButton: React.FC<HamburgerButtonProps> = ({
+  handleMobileMenu,
+}) => {
   return (
     <button
       onClick={() => {
