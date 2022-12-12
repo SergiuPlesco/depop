@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Login from "../../components/Login";
 import Logo from "../../components/Logo";
@@ -8,15 +8,34 @@ import HumburgerButton from "../../components/HumburgerButton";
 import MobileNavigation from "../mobileNavigation/MobileNavigation";
 
 const Header = () => {
+  const [screenSize, getScreenSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+  const setDimension = () => {
+    getScreenSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  });
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
   const handleMobileMenu = () => {
     setMobileMenuVisible(true);
   };
+
   return (
     <HeaderContainer>
       <div className="header-top">
-        <HumburgerButton handleMobileMenu={handleMobileMenu} />
-        <Logo />
+        {screenSize.width < 769 && (
+          <HumburgerButton handleMobileMenu={handleMobileMenu} />
+        )}
+        {screenSize.width < 769 ? "D" : <Logo />}
         <SearchBar />
         <Login />
       </div>
