@@ -1,10 +1,12 @@
-import React from "react";
 import styled, { css } from "styled-components";
+import useScreenSize from "../hooks/useScreenSize";
+
 const Login = () => {
+  const { isTablet } = useScreenSize();
   return (
     <LoginContainer>
       <Button primary>Sign up</Button>
-      <Button>Login</Button>
+      {isTablet && <Button>Login</Button>}
     </LoginContainer>
   );
 };
@@ -12,11 +14,10 @@ const Login = () => {
 export default Login;
 
 const LoginContainer = styled.div`
-  display: none;
-  @media (min-width: 1024px) {
-    display: flex;
-  }
+  display: flex;
+  justig-content: center;
 `;
+
 interface ButtonProps {
   primary?: boolean;
 }
@@ -25,10 +26,10 @@ const Button = styled.div<ButtonProps>`
   ${(props) =>
     props.primary &&
     css`
-      background-color: #000000;
+      background-color: rgb(38, 38, 38);
       color: #fff;
     `};
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1.25rem;
   font-weight: bold;
   border-radius: 0.125rem;
   font-size: 1rem;

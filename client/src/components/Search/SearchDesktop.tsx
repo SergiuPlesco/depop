@@ -1,6 +1,7 @@
+import React from "react";
 import { ChangeEventHandler, useState } from "react";
+import SearchIcon from "../../assets/search.svg";
 import styled from "styled-components";
-import Search from "../assets/search.svg";
 
 const demoWords: string[] = [
   "vintage",
@@ -13,7 +14,7 @@ const demoWords: string[] = [
   "doc martens",
 ];
 
-const SearchBar: React.FC = () => {
+const SearchDesktop: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>(() => "");
   const [showResult, setShowResult] = useState<boolean>(false);
 
@@ -24,11 +25,10 @@ const SearchBar: React.FC = () => {
   const OnSearchQueryChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearchQuery(() => e.target.value);
   };
-
   return (
     <SearchBarContainer>
       <form>
-        <img src={Search} alt="search icon" />
+        <img src={SearchIcon} alt="search icon" />
         <input
           type="text"
           value={searchQuery}
@@ -57,15 +57,14 @@ const SearchBar: React.FC = () => {
   );
 };
 
-export default SearchBar;
+export default SearchDesktop;
 
 const SearchBarContainer = styled.div`
-  flex: 0.5;
+  flex: 0.7;
   max-width: 44rem;
   form {
     display: flex;
     align-items: center;
-    border: 1px solid lightgray;
     border-radius: 0.3rem;
     position: relative;
   }
@@ -80,7 +79,8 @@ const SearchBarContainer = styled.div`
   input {
     width: 100%;
     padding: 0 0.5rem 0 2.5rem;
-    border: none;
+    border: 2px solid rgb(38, 38, 38);
+    border-radius: 4px;
     height: 2.5rem;
   }
 `;

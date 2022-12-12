@@ -42,7 +42,7 @@ const Banner = () => {
 
 export default Banner;
 
-const BannerContainer = styled.div`
+const BannerContainer = styled.section`
   position: relative;
   overflow: hidden;
   margin-bottom: 5rem;

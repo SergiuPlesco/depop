@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import DesktopLogo from "../assets/DesktopLogo";
 
 const Logo = () => {
   return (
     <LogoContainer>
-      <h2>depop</h2>
+      <DesktopLogo />
     </LogoContainer>
   );
 };
@@ -11,8 +12,6 @@ const Logo = () => {
 export default Logo;
 
 const LogoContainer = styled.div`
-  h2 {
-    color: rgb(255, 35, 0);
-    font-weight: bold;
-  }
+  width: 90px;
+  height: 23px;
 `;
