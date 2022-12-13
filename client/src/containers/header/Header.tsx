@@ -2,14 +2,15 @@ import { useState } from "react";
 import styled from "styled-components";
 import Login from "../../components/Login";
 import Logo from "../../components/Logo";
-import Search from "../../components/Search/Search";
+import SearchDesktop from "../../components/Search/SearchDesktop";
 import Navigation from "../../components/Navigation";
 import HumburgerButton from "../../components/HumburgerButton";
 import MobileNavigation from "../mobileNavigation/MobileNavigation";
 import useScreenSize from "../../hooks/useScreenSize";
+import SearchButton from "../../components/Search/SearchButton";
 
 const Header = () => {
-  const { isMobile } = useScreenSize();
+  const { isMobile, isTablet } = useScreenSize();
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
   const handleMobileMenu = () => {
@@ -23,8 +24,9 @@ const Header = () => {
           {isMobile && <HumburgerButton handleMobileMenu={handleMobileMenu} />}
           <Logo />
         </div>
-        <div className="flex items-center">
-          <Search />
+        {isTablet && <SearchDesktop />}
+        <div className="flex items-center gap-2">
+          {isMobile && <SearchButton />}
           <Login />
         </div>
       </div>

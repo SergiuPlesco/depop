@@ -73,7 +73,7 @@ const SearchBarContainer = styled.div`
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 0.55rem;
+    top: 0.45rem;
     left: 0.5rem;
   }
   input {

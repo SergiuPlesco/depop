@@ -24,12 +24,16 @@ interface ButtonProps {
 
 const Button = styled.div<ButtonProps>`
   ${(props) =>
-    props.primary &&
-    css`
-      background-color: rgb(38, 38, 38);
-      color: #fff;
-    `};
-  padding: 0.5rem 1.25rem;
+    props.primary
+      ? css`
+          background-color: rgb(38, 38, 38);
+          color: #fff;
+          padding: 0.5rem 1.25rem;
+        `
+      : css`
+          padding: 0.5rem 0 0.5rem 1.25rem;
+        `};
+
   font-weight: bold;
   border-radius: 0.125rem;
   font-size: 1rem;
