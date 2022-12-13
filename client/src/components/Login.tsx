@@ -1,12 +1,20 @@
 import styled, { css } from "styled-components";
 import useScreenSize from "../hooks/useScreenSize";
+import { Link } from "react-router-dom";
+import Paths from "./AppNavigation/Paths";
 
 const Login = () => {
   const { isTablet } = useScreenSize();
   return (
     <LoginContainer>
-      <Button primary>Sign up</Button>
-      {isTablet && <Button>Login</Button>}
+      <Button primary>
+        <Link to={Paths.signUp}>Sign up</Link>
+      </Button>
+      {isTablet && (
+        <Button>
+          <Link to={Paths.login}>Login</Link>
+        </Button>
+      )}
     </LoginContainer>
   );
 };

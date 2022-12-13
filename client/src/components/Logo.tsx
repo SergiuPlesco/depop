@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import DesktopLogo from "../assets/DesktopLogo";
+import { Link } from "react-router-dom";
+import Paths from "./AppNavigation/Paths";
 
 const Logo = () => {
   return (
     <LogoContainer>
-      <DesktopLogo />
+      <Link to={Paths.home}>
+        <DesktopLogo />
+      </Link>
     </LogoContainer>
   );
 };

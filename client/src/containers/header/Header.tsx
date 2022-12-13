@@ -3,9 +3,7 @@ import styled from "styled-components";
 import Login from "../../components/Login";
 import Logo from "../../components/Logo";
 import SearchDesktop from "../../components/Search/SearchDesktop";
-import Navigation from "../../components/Navigation";
 import HumburgerButton from "../../components/HumburgerButton";
-import MobileNavigation from "../mobileNavigation/MobileNavigation";
 import useScreenSize from "../../hooks/useScreenSize";
 import SearchButton from "../../components/Search/SearchButton";
 
@@ -30,14 +28,6 @@ const Header = () => {
           <Login />
         </div>
       </div>
-      <div className="header-bottom">
-        <Navigation />
-      </div>
-      {isMobileMenuVisible && (
-        <div className="mobile-navigation">
-          <MobileNavigation />
-        </div>
-      )}
     </HeaderContainer>
   );
 };
@@ -56,14 +46,5 @@ const HeaderContainer = styled.header`
     @media (min-width: 769px) {
       padding: 12px 32px;
     }
-  }
-  .header-bottom {
-    display: none;
-    @media (min-width: 1024px) {
-      display: block;
-    }
-  }
-  .mobile-navigation-container {
-    position: relative;
   }
 `;
