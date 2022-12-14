@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Banner from "../components/Banner";
+import Banner from "./Banner";
 import MainContent from "./MainContentContainer";
 
 const Main = () => {

@@ -3,7 +3,7 @@ import HamburgerIcon from "../assets/HamburgerIcon";
 type HamburgerButtonProps = {
   handleMobileMenu: () => void;
 };
-const HumburgerButton: React.FC<HamburgerButtonProps> = ({
+const HamburgerButton: React.FC<HamburgerButtonProps> = ({
   handleMobileMenu,
 }) => {
   return (
@@ -17,4 +17,4 @@ const HumburgerButton: React.FC<HamburgerButtonProps> = ({
   );
 };
 
-export default HumburgerButton;
+export default HamburgerButton;
