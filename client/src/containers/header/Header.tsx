@@ -1,30 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Login from "../../components/Login";
 import Logo from "../../components/Logo";
-import SearchBar from "../../components/SearchBar";
-import Navigation from "../../components/Navigation";
+import SearchDesktop from "../../components/Search/SearchDesktop";
 import HumburgerButton from "../../components/HumburgerButton";
-import MobileNavigation from "../mobileNavigation/MobileNavigation";
+import useScreenSize from "../../hooks/useScreenSize";
+import SearchButton from "../../components/Search/SearchButton";
 
 const Header = () => {
-  const [screenSize, getScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-  const setDimension = () => {
-    getScreenSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
-  useEffect(() => {
-    window.addEventListener("resize", setDimension);
-    return () => {
-      window.removeEventListener("resize", setDimension);
-    };
-  });
+  const { isMobile, isTablet } = useScreenSize();
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
+
   const handleMobileMenu = () => {
     setMobileMenuVisible(true);
   };
@@ -32,21 +18,16 @@ const Header = () => {
   return (
     <HeaderContainer>
       <div className="header-top">
-        {screenSize.width < 769 && (
-          <HumburgerButton handleMobileMenu={handleMobileMenu} />
-        )}
-        {screenSize.width < 769 ? "D" : <Logo />}
-        <SearchBar />
-        <Login />
-      </div>
-      <div className="header-bottom">
-        <Navigation />
-      </div>
-      {isMobileMenuVisible && (
-        <div className="mobile-navigation">
-          <MobileNavigation />
+        <div className="flex items-center">
+          {isMobile && <HumburgerButton handleMobileMenu={handleMobileMenu} />}
+          <Logo />
         </div>
-      )}
+        {isTablet && <SearchDesktop />}
+        <div className="flex items-center gap-2">
+          {isMobile && <SearchButton />}
+          <Login />
+        </div>
+      </div>
     </HeaderContainer>
   );
 };
@@ -55,21 +36,15 @@ export default Header;
 
 const HeaderContainer = styled.header`
   position: relative;
-  padding: 0 1rem;
-
+  z-index: 3;
   .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.0625rem solid rgb(215, 215, 215);
-  }
-  .header-bottom {
-    display: none;
-    @media (min-width: 1024px) {
-      display: block;
+    padding: 12px 16px;
+    @media (min-width: 769px) {
+      padding: 12px 32px;
     }
-  }
-  .mobile-navigation-container {
-    position: relative;
   }
 `;

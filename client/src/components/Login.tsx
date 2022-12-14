@@ -1,10 +1,20 @@
-import React from "react";
 import styled, { css } from "styled-components";
+import useScreenSize from "../hooks/useScreenSize";
+import { Link } from "react-router-dom";
+import Paths from "./AppNavigation/Paths";
+
 const Login = () => {
+  const { isTablet } = useScreenSize();
   return (
     <LoginContainer>
-      <Button primary>Sign up</Button>
-      <Button>Login</Button>
+      <Button primary>
+        <Link to={Paths.signUp}>Sign up</Link>
+      </Button>
+      {isTablet && (
+        <Button>
+          <Link to={Paths.login}>Login</Link>
+        </Button>
+      )}
     </LoginContainer>
   );
 };
@@ -12,23 +22,26 @@ const Login = () => {
 export default Login;
 
 const LoginContainer = styled.div`
-  display: none;
-  @media (min-width: 1024px) {
-    display: flex;
-  }
+  display: flex;
+  justig-content: center;
 `;
+
 interface ButtonProps {
   primary?: boolean;
 }
 
 const Button = styled.div<ButtonProps>`
   ${(props) =>
-    props.primary &&
-    css`
-      background-color: #000000;
-      color: #fff;
-    `};
-  padding: 0.25rem 1rem;
+    props.primary
+      ? css`
+          background-color: rgb(38, 38, 38);
+          color: #fff;
+          padding: 0.5rem 1.25rem;
+        `
+      : css`
+          padding: 0.5rem 0 0.5rem 1.25rem;
+        `};
+
   font-weight: bold;
   border-radius: 0.125rem;
   font-size: 1rem;

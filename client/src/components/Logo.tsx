@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import DesktopLogo from "../assets/DesktopLogo";
+import { Link } from "react-router-dom";
+import Paths from "./AppNavigation/Paths";
 
 const Logo = () => {
   return (
     <LogoContainer>
-      <h2>depop</h2>
+      <Link to={Paths.home}>
+        <DesktopLogo />
+      </Link>
     </LogoContainer>
   );
 };
@@ -11,8 +16,6 @@ const Logo = () => {
 export default Logo;
 
 const LogoContainer = styled.div`
-  h2 {
-    color: rgb(255, 35, 0);
-    font-weight: bold;
-  }
+  width: 90px;
+  height: 23px;
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import Navigation from "../../components/Navigation";
+import Navigation from "../../components/AppNavigation/Navigation";
 import styled from "styled-components";
 import Login from "../../components/Login";
 
