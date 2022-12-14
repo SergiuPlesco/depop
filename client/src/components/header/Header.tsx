@@ -1,31 +1,23 @@
-import { useState } from "react";
 import styled from "styled-components";
-import Login from "../../components/Login";
+import UserHeaderNavigation from "../AppNavigation/UserHeaderNavigation";
+import MobileNavigation from "../AppNavigation/MobileNavigation/MobileNavigation";
 import Logo from "../../components/Logo";
 import SearchDesktop from "../../components/Search/SearchDesktop";
-import HumburgerButton from "../../components/HumburgerButton";
 import useScreenSize from "../../hooks/useScreenSize";
-import SearchButton from "../../components/Search/SearchButton";
 
 const Header = () => {
-  const { isMobile, isTablet } = useScreenSize();
-  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
-
-  const handleMobileMenu = () => {
-    setMobileMenuVisible(true);
-  };
+  const { isTablet } = useScreenSize();
 
   return (
     <HeaderContainer>
       <div className="header-top">
         <div className="flex items-center">
-          {isMobile && <HumburgerButton handleMobileMenu={handleMobileMenu} />}
+          <MobileNavigation />
           <Logo />
         </div>
         {isTablet && <SearchDesktop />}
         <div className="flex items-center gap-2">
-          {isMobile && <SearchButton />}
-          <Login />
+          <UserHeaderNavigation />
         </div>
       </div>
     </HeaderContainer>

@@ -1,6 +1,6 @@
-import Header from "./header/Header";
-import Main from "./Main";
-import Footer from "./Footer";
+import Header from "../components/header/Header";
+import Main from "../components/Main";
+import Footer from "../components/Footer";
 import Navigation from "../components/AppNavigation/Navigation";
 import useScreenSize from "../hooks/useScreenSize";
 
