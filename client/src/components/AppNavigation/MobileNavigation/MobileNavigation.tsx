@@ -4,6 +4,10 @@ import CloseIcon from "../../../assets/close.png";
 import useScreenSize from "../../../hooks/useScreenSize";
 import HamburgerButton from "../../HamburgerButton";
 import SocialActions from "../SocialActions";
+import CountryLanguageSelect from "./CountryLanguageSelect";
+import MainNavigation from "./MainNavigation";
+import ProfileNavigation from "./ProfileNavigation";
+import SupportNavigation from "./SupportNavigation";
 
 const MobileNavigation = () => {
   const { isMobile } = useScreenSize();
@@ -19,7 +23,7 @@ const MobileNavigation = () => {
     <>
       {isMobile && <HamburgerButton handleMobileMenu={handleMobileMenu} />}
 
-      <MobileNavigationContainer visible={isMobileMenuVisible}>
+      <MobileNavigationContainer visible={isMobileMenuVisible && isMobile}>
         <div className="flex justify-between">
           <SocialActions />
 
@@ -27,6 +31,10 @@ const MobileNavigation = () => {
             <img src={CloseIcon} width={18} height={18} alt="" />
           </button>
         </div>
+        <ProfileNavigation />
+        <MainNavigation />
+        <SupportNavigation />
+        <CountryLanguageSelect />
       </MobileNavigationContainer>
     </>
   );
@@ -47,16 +55,14 @@ const MobileNavigationContainer = styled.div<ContainerProps>`
   background-color: #fff;
   z-index: 2;
   padding: 1.5rem;
-  box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.1);
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out 0s;
   ${(props) =>
     props.visible
       ? css`
-          visibility: visible;
           transform: translateX(0);
+          box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.1);
         `
       : css`
-          visibility: hidden;
           transform: translateX(-100%);
         `}
 `;
