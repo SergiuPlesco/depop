@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import CloseIcon from "../../../assets/close.png";
+import Xmark from "../../../assets/Xmark";
 import useScreenSize from "../../../hooks/useScreenSize";
 import HamburgerButton from "../../HamburgerButton";
 import SocialActions from "../SocialActions";
@@ -28,7 +28,7 @@ const MobileNavigation = () => {
           <SocialActions />
 
           <button onClick={closeMobileMenu}>
-            <img src={CloseIcon} width={18} height={18} alt="" />
+            <Xmark />
           </button>
         </div>
         <ProfileNavigation />
