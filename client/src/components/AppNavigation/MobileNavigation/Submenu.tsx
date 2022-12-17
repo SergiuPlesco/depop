@@ -38,7 +38,7 @@ const SubmenuContainer = styled.div<SubmenuContainerProps>`
 	width: 100%;
 	height: 100%;
 	z-index: 100;
-	background-color: #fff999;
+	background-color: #fff;
 	padding: 1.5rem;
 	overflow-y: auto;
 	${(props) =>
