@@ -1,28 +1,18 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { MENU_NAMES } from "../../common/constants";
 
 const Navigation = () => {
   return (
     <NavContainer>
       <NavList>
-        <li>
-          <Link to="">Womenswear</Link>
-        </li>
-        <li>
-          <Link to="">Menswear</Link>
-        </li>
-        <li>
-          <Link to="">Jewelry</Link>
-        </li>
-        <li>
-          <Link to="">Beauty</Link>
-        </li>
-        <li>
-          <Link to="">More</Link>
-        </li>
-        <li>
-          <Link to="">Brands</Link>
-        </li>
+        {Object.values(MENU_NAMES).map((menu) => {
+          return (
+            <li key={menu.name}>
+              <Link to="">{menu.name}</Link>
+            </li>
+          );
+        })}
       </NavList>
     </NavContainer>
   );
@@ -30,16 +20,12 @@ const Navigation = () => {
 
 export default Navigation;
 
-const NavContainer = styled.nav`
-  border-bottom: 0.0625rem solid rgb(238, 238, 238);
-`;
+const NavContainer = styled.nav``;
 const NavList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  @media (min-width: 1024px) {
-    display: flex;
-  }
+  display: flex;
 
   li {
     a {

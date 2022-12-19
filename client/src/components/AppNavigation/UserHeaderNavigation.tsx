@@ -19,7 +19,7 @@ const UserHeaderNavigation = () => {
 
   return (
     <nav>
-      <ul className="flex justify-center gap-1">
+      <ul className="flex justify-center items-center gap-1">
         {isMobile && (
           <li>
             <SearchButton />
