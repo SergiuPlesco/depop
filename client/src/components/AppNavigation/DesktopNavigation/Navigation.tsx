@@ -1,26 +1,26 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { MENU_NAMES } from "../../common/constants";
+import { MENU_NAMES } from "../../../common/constants";
+import ExtraNavigationItem from "./ExtraNavigationItem";
+import NavigationItem from "./NavigationItem";
 
 const Navigation = () => {
   return (
     <NavContainer>
       <NavList>
         {Object.values(MENU_NAMES).map((menu) => {
-          return (
-            <li key={menu.name}>
-              <Link to="">{menu.name}</Link>
-            </li>
-          );
+          return <NavigationItem menu={menu} />;
         })}
       </NavList>
+      <ExtraNavigationItem />
     </NavContainer>
   );
 };
 
 export default Navigation;
 
-const NavContainer = styled.nav``;
+const NavContainer = styled.nav`
+  display: flex;
+`;
 const NavList = styled.ul`
   list-style: none;
   padding: 0;
@@ -28,7 +28,7 @@ const NavList = styled.ul`
   display: flex;
 
   li {
-    a {
+    button {
       display: block;
       padding: 0.75rem 1rem;
       text-decoration: none;
