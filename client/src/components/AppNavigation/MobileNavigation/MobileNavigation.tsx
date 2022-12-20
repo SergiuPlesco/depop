@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 import Xmark from "../../../assets/Xmark";
 import useScreenSize from "../../../hooks/useScreenSize";
-import HamburgerButton from "../../HamburgerButton";
+import HamburgerButton from "./HamburgerButton";
 import SocialActions from "../SocialActions";
 import CountryLanguageSelect from "./CountryLanguageSelect";
 import MainNavigation from "./MainNavigation";
