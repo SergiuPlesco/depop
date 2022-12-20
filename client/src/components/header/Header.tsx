@@ -4,6 +4,7 @@ import MobileNavigation from "../AppNavigation/MobileNavigation/MobileNavigation
 import Logo from "../../components/Logo";
 import SearchDesktop from "../../components/Search/SearchDesktop";
 import useScreenSize from "../../hooks/useScreenSize";
+import Navigation from "../AppNavigation/DesktopNavigation/Navigation";
 
 const Header = () => {
   const { isTablet } = useScreenSize();
@@ -20,6 +21,7 @@ const Header = () => {
           <UserHeaderNavigation />
         </div>
       </div>
+      {isTablet && <Navigation />}
     </HeaderContainer>
   );
 };
@@ -34,9 +36,9 @@ const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     border-bottom: 0.0625rem solid rgb(215, 215, 215);
-    padding: 12px 16px;
+    padding: 0.75rem 1rem;
     @media (min-width: 769px) {
-      padding: 12px 32px;
+      padding: 0.75rem 2rem;
     }
   }
 `;

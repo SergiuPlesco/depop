@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
-import CloseIcon from "../../../assets/close.png";
+import Xmark from "../../../assets/Xmark";
 import useScreenSize from "../../../hooks/useScreenSize";
 import HamburgerButton from "../../HamburgerButton";
 import SocialActions from "../SocialActions";
@@ -28,11 +28,11 @@ const MobileNavigation = () => {
           <SocialActions />
 
           <button onClick={closeMobileMenu}>
-            <img src={CloseIcon} width={18} height={18} alt="" />
+            <Xmark />
           </button>
         </div>
         <ProfileNavigation />
-        <MainNavigation />
+        <MainNavigation closeMobileMenu={closeMobileMenu} />
         <SupportNavigation />
         <CountryLanguageSelect />
       </MobileNavigationContainer>
@@ -56,6 +56,7 @@ const MobileNavigationContainer = styled.div<ContainerProps>`
   z-index: 2;
   padding: 1.5rem;
   transition: transform 250ms ease-in-out 0s;
+  overflow-y: auto;
   ${(props) =>
     props.visible
       ? css`
