@@ -35,10 +35,7 @@ const NavigationItem: React.FC<NavigationItemType> = ({ menu }) => {
           <ul className="text-sm w-56 p-0 m-0">
             {Object.values(menu.submenu).map((submenu) => {
               return (
-                <li
-                  key={submenu.name}
-                  className="border-b relative last:border-0"
-                >
+                <li className="border-b relative last:border-0">
                   {/* should be made a Link later */}
                   <a
                     href=""

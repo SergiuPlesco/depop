@@ -8,7 +8,7 @@ const Navigation = () => {
     <NavContainer>
       <NavList>
         {Object.values(MENU_NAMES).map((menu) => {
-          return <NavigationItem menu={menu} />;
+          return <NavigationItem key={menu.name} menu={menu} />;
         })}
       </NavList>
       <ExtraNavigationItem />
