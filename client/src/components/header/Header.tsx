@@ -4,6 +4,7 @@ import MobileNavigation from "../AppNavigation/MobileNavigation/MobileNavigation
 import Logo from "../../components/Logo";
 import SearchDesktop from "../../components/Search/SearchDesktop";
 import useScreenSize from "../../hooks/useScreenSize";
+import Navigation from "../AppNavigation/DesktopNavigation/Navigation";
 
 const Header = () => {
   const { isTablet } = useScreenSize();
@@ -20,6 +21,7 @@ const Header = () => {
           <UserHeaderNavigation />
         </div>
       </div>
+      {isTablet && <Navigation />}
     </HeaderContainer>
   );
 };
