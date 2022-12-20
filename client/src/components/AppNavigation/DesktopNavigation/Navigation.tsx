@@ -20,6 +20,9 @@ export default Navigation;
 
 const NavContainer = styled.nav`
   display: flex;
+  @media (min-width: 769px) {
+    padding: 0 1rem;
+  }
 `;
 const NavList = styled.ul`
   list-style: none;
