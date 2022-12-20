@@ -1,5 +1,5 @@
 import React from "react";
-import HamburgerIcon from "../assets/HamburgerIcon";
+import HamburgerIcon from "../../../assets/HamburgerIcon";
 type HamburgerButtonProps = {
   handleMobileMenu: () => void;
 };
