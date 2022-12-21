@@ -50,7 +50,7 @@ const Submenu: React.FC<SubmenuProps> = ({
         <div className="mt-8 mb-2">
           <ul>
             {/* used for bottom border only */}
-            <li className="border-b"></li>
+            <span className="border-b"></span>
             {Object.values(submenu).map((submenu) => {
               return (
                 <li key={submenu.name} className="border-b">
